@@ -1,0 +1,32 @@
+
+<%= form_for :document_detail do  |f| %>
+ 
+  <p>
+    <%= f.label :ifsc_code_lbl, "IFSC Code:"%><br>
+    <%= f.text_field :ifsc_code %>
+  </p>
+
+    <p>
+    <%= f.label :bank_name_lbl, "Bank Name:"%><br>
+    <%= f.text_field :bank_name, readonly: true %>
+  </p>
+ 
+  <p>
+    <%= f.label :number_of_entries_lbl, "Number of Entries:" %><br>
+    <%= f.text_field :number_of_entries %>
+  </p>
+
+  <p>
+    <%= f.label :search_by_lbl,  "Search by:" %><br>
+    <%= f.select :search_by, options_for_select(@search_by_options) %>
+  </p>
+
+  <p>
+    <%= f.file_field :document %>
+  </p>
+
+  <p>
+    <%= f.submit "Submit", :class => 'submit-btn'%>
+  </p>
+  
+<% end %>
